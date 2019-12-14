@@ -1,6 +1,7 @@
 package application;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Locale;
@@ -15,6 +16,10 @@ public class Program {
 		
 		System.out.print("Digite o caminho do arquivo .CSV que deseja ler: ");
 		String path = sc.nextLine();
+		
+		File parentPath = new File(path);
+		
+		new File (parentPath.getParent() + "\\out").mkdir();
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(path))){
 			
