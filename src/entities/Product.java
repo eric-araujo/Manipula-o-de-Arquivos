@@ -35,4 +35,13 @@ public class Product {
 		this.quantity = quantity;
 	}
 	
+	private double valueTotal() {
+		return value * quantity;
+	}
+	
+	@Override
+	public String toString() {
+		return name + "," + String.format("%.2f", valueTotal());
+	}
+	
 }
